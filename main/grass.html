@@ -1,49 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>when2clean</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>when2clean</title>
+    <!--Go to https://console.firebase.google.com-->
+    <!--Sign in and add a project "fireMessage"-->
+    <!--PASTE SNIPPET HERE-->
 
-  <!--Go to https://console.firebase.google.com-->
-  <!--Sign in and add a project "fireMessage"-->
-  <!--PASTE SNIPPET HERE-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
 
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
 
-  <script type="module">
-    const firebaseConfig = {
-      apiKey: "AIzaSyCcPwQOnlU0mWF4Os9DCotpLKqBrn0lNo4",
-      authDomain: "when2clean-66dda.firebaseapp.com",
-      projectId: "when2clean-66dda",
-      storageBucket: "when2clean-66dda.appspot.com",
-      messagingSenderId: "84511905177",
-      appId: "1:84511905177:web:6b4488482605a6979e2f08",
-      measurementId: "G-LRRBV9KWK8",
-    };
+    <link
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-  </script>
+    <script type="module">
+      const firebaseConfig = {
+        apiKey: "AIzaSyCcPwQOnlU0mWF4Os9DCotpLKqBrn0lNo4",
+        authDomain: "when2clean-66dda.firebaseapp.com",
+        projectId: "when2clean-66dda",
+        storageBucket: "when2clean-66dda.appspot.com",
+        messagingSenderId: "84511905177",
+        appId: "1:84511905177:web:6b4488482605a6979e2f08",
+        measurementId: "G-LRRBV9KWK8",
+      };
 
-  <link rel="stylesheet" href="../styles/grass.css">
-  <script src="../scripts/availability.js" defer></script>
-</head>
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
 
-<body>
+    <link rel="stylesheet" href="../styles/grass.css" />
+    <script src="../scripts/availability.js" defer></script>
+  </head>
 
-  <button id="submitButton">Click Me</button>
+  <body>
+    Date:
+    <input type="text" class="date_in" />
+    <div class="date_div"></div>
+    <script>
+      $(".date_div").datepicker({
+        inline: true,
+        altField: ".date_in",
+      });
 
-</body>
+      $(".date_in").change(function () {
+        $(".date_div").datepicker("setDate", $(this).val());
+      });
 
+      function submitDate() {
+        currentDate = document.getElementsByClassName("date_div")[0].value;
+        console.log(currentDate);
+      }
+    </script>
+    <button class="submitdate" onclick="submitDate();">console date</button>
+    <button class="submitButton">test database post</button>
+  </body>
 </html>

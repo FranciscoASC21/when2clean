@@ -1,7 +1,7 @@
 let database = firebase.database().ref();
 
 // database.on("value", updateAvailability);
-const button = document.querySelector("#submitButton");
+const button = document.querySelector(".submitButton");
 // var eventsRef = database.collection("events").doc("PlantTrees");
 
 button.onclick = function updateDB(event) {
