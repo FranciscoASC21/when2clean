@@ -35,14 +35,94 @@
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
   </script>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/style.css">
   <script src="/scripts/scripts.js" defer></script>
 </head>
 
 <body>
 
-  <button id="submitButton">Submit</button>
+  <div class="navbar">
+    <img src="/images/logo.png">
+    <div class="buttons">
+      <a></a>
+      <a></a>
+      <a href="#">Brooklyn</a>
+      <a href="#">Bronx</a>
+      <a href="#">Manhattan</a>
+      <a href="#">Queens</a>
+      <a href="#">Staten Island</a>
+    </div>
+  </div>
+
+
+  <div class="map-content">
+
+    <div class="map">
+      <img class="nyc-map" src="/images/whole_map.png">
+      <img class="marker brooklyn-marker" src="/images/marker.png">
+      <img class="marker bronx-marker" src="/images/marker.png">
+      <img class="marker man-marker" src="/images/marker.png">
+      <img class="marker queens-marker" src="/images/marker.png">
+      <img class="marker si-marker" src="/images/marker.png">
+
+      <p>
+        Click on a marker to view parks in that borough
+      </p>
+    </div>
+
+    <div class="site-info">
+
+      <div class="site-description">
+        <p>
+          <strong>When2clean</strong> is a website dedicated to helping the environment by bringing people together to
+          clean up parks.
+          Our
+          mission is to reduce waste, and increase the sustainability in NYC one park at a time. We welcome all to find
+          a
+          park near you and plan with others to help our city!
+        </p>
+        <br>
+        <h4 style="text-align:center;">See the work people like you have done!</h4>
+      </div>
+
+      <div>
+        <img class="mySlides" src="/images/park.jpg">
+        <img class="mySlides" src="/images/park2.jpg">
+        <img class="mySlides" src="/images/park3.jpg">
+        <img class="mySlides" src="/images/park4.jpg">
+
+        <div class="buttons">
+          <button class="one arrow-btn" onclick="plusDivs(-1)">&#10094;</button>
+          <button class="two arrow-btn" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+      </div>
+
+      <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) { slideIndex = 1 }
+          if (n < 1) { slideIndex = x.length }
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          x[slideIndex - 1].style.display = "block";
+        }
+      </script>
+
+    </div>
+
+  </div>
 
 </body>
 

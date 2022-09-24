@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+  background-image: url(/images/backdrop.png);
+  background-size: 100vw;
+}
+
+.navbar {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  display: flex;
+  align-items: center;
+}
+
+.navbar img {
+  width: 15vw;
+}
+
+.navbar .buttons {
+  margin-left: 5vw;
+  padding-bottom: 5px;
+  width: 65vw;
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: black 1px solid;
+}
+
+.buttons a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+.buttons a:hover {
+  font-weight: bold;
+  box-shadow: 0 -3px 0 #000;
+}
+
+.buttons .text-wrap {
+  vertical-align: middle;
+  display: inline-block;
+  width: 60%;
+}
+
+.text-wrap p {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.map-content {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.nyc-map {
+  width: 40vw;
+}
+
+.marker {
+  width: 5vw;
+  position: absolute;
+  cursor: pointer;
+}
+
+.brooklyn-marker {
+  transform: translate(-20vw, 23vw);
+}
+
+.brooklyn-marker:hover {
+  animation: brooklyn-enbiggen 0.4s forwards;
+}
+
+@keyframes brooklyn-enbiggen {
+  to {
+    transform: translate(-20vw, 22.5vw) scale(1.4);
+    filter: brightness(70%);
+  }
+}
+
+.bronx-marker {
+  transform: translate(-15vw, 4vw);
+}
+
+.bronx-marker:hover {
+  animation: bronx-enbiggen 0.4s forwards;
+}
+
+@keyframes bronx-enbiggen {
+  to {
+    transform: translate(-15vw, 3.5vw) scale(1.4);
+    filter: brightness(70%);
+  }
+}
+
+.man-marker {
+  transform: translate(-22vw, 11vw);
+}
+
+.man-marker:hover {
+  animation: man-enbiggen 0.4s forwards;
+}
+
+@keyframes man-enbiggen {
+  to {
+    transform: translate(-22vw, 10.5vw) scale(1.4);
+    filter: brightness(70%);
+  }
+}
+
+.queens-marker {
+  transform: translate(-10vw, 16vw);
+}
+
+.queens-marker:hover {
+  animation: queens-enbiggen 0.4s forwards;
+}
+
+@keyframes queens-enbiggen {
+  to {
+    transform: translate(-10vw, 15.5vw) scale(1.4);
+    filter: brightness(70%);
+  }
+}
+
+.si-marker {
+  transform: translate(-34vw, 28vw);
+}
+
+.si-marker:hover {
+  animation: si-enbiggen 0.4s forwards;
+}
+
+@keyframes si-enbiggen {
+  to {
+    transform: translate(-34vw, 27.5vw) scale(1.4);
+    filter: brightness(70%);
+  }
+}
+
+.map p {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.site-description {
+  font-size: 20px;
+  line-height: 150%;
+}
+
+.site-info {
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* border: black 1px solid; */
+  border-radius: 20px;
+  padding: 25px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.site-info img {
+  width: 35vw;
+  height: 40vh;
+  margin-top: 15px;
+  border-radius: 4px;
+}
+
+.mySlides {
+  display: none;
+}
+
+.arrow-btn {
+  width: 3vw;
+  height: 10vh;
+  background-color: rgba(255, 255, 255, 0.753);
+  border: 1px solid white;
+}
+
+.arrow-btn:hover {
+  cursor: pointer;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.buttons .one {
+  position: absolute;
+  transform: translate(0, -13vw);
+}
+
+.buttons .two {
+  position: absolute;
+  transform: translate(32vw, -13vw);
+}
