@@ -4,7 +4,7 @@
 }
 
 body {
-  background-image: url(/images/backdrop.png);
+  background-image: url(../images/backdrop.png);
   background-size: 100vw;
 }
 
@@ -162,7 +162,6 @@ strong {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   border-radius: 20px;
   padding: 25px;
   background-color: rgba(255, 255, 255, 0.7);
