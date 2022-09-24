@@ -7,11 +7,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>when2clean</title>
 
+  <!--Go to https://console.firebase.google.com-->
+  <!--Sign in and add a project "fireMessage"-->
+  <!--PASTE SNIPPET HERE-->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
+
+  <script type="module">
+    const firebaseConfig = {
+      apiKey: "AIzaSyCcPwQOnlU0mWF4Os9DCotpLKqBrn0lNo4",
+      authDomain: "when2clean-66dda.firebaseapp.com",
+      projectId: "when2clean-66dda",
+      storageBucket: "when2clean-66dda.appspot.com",
+      messagingSenderId: "84511905177",
+      appId: "1:84511905177:web:6b4488482605a6979e2f08",
+      measurementId: "G-LRRBV9KWK8"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
   <link rel="stylesheet" href="/styles/style.css">
   <script src="/scripts/scripts.js" defer></script>
 </head>
 
 <body>
+
+  <button id="submitButton">Submit</button>
 
 </body>
 
