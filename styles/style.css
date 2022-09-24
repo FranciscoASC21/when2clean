@@ -8,6 +8,10 @@ body {
   background-size: 100vw;
 }
 
+strong {
+  font-weight: bold;
+}
+
 .navbar {
   padding-left: 5vw;
   padding-right: 5vw;
