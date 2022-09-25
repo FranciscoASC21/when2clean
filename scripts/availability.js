@@ -8,7 +8,7 @@ button.onclick = function updateDB(event) {
   event.preventDefault(); //stop refreshing
   //Update database here
   let value = {
-    SEQUENCES: ["1010110101011", "0010001001011", "0011000100001"],
+    SEQUENCES: ["101011010011", "001000101011", "001100010001"],
   };
   database.push(value);
 };
@@ -35,10 +35,10 @@ database.once("value", function (snapshot) {
       console.log(currSequence[element]);
       sum = sum + parseInt(currSequence[element], 10);
     }
-    finalsum = padString(sum.toString(), 13);
+    finalSum = padString(sum.toString(), 12);
     const arr = [];
-    for (var i = 0; i < finalsum.length; i++) {
-      arr.push(finalsum[i] / currSequence.length);
+    for (var i = 0; i < finalSum.length; i++) {
+      arr.push(finalSum[i] / currSequence.length);
     }
     console.log(arr);
   }
