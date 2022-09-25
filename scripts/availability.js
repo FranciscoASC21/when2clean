@@ -26,20 +26,31 @@ function padString(str, length) {
   return str;
 }
 
-database.once("value", function (snapshot) {
-  var sum = 0;
-  for (var key in snapshot.val()) {
-    var currSequence = snapshot.val()[key].SEQUENCES;
-    console.log(currSequence);
-    for (var element in currSequence) {
-      console.log(currSequence[element]);
-      sum = sum + parseInt(currSequence[element], 10);
-    }
-    finalSum = padString(sum.toString(), 12);
-    const arr = [];
-    for (var i = 0; i < finalSum.length; i++) {
-      arr.push(finalSum[i] / currSequence.length);
-    }
-    console.log(arr);
-  }
-});
+var url = document.location.href,
+  params = url.split("?")[1].split("&"),
+  data = {},
+  tmp;
+for (var i = 0, l = params.length; i < l; i++) {
+  tmp = params[i].split("=");
+  data[tmp[0]] = tmp[1];
+}
+
+// database.once("value", function (snapshot) {
+//   var sum = 0;
+//   for (var key in snapshot.val()) {
+//     var currSequence = snapshot.val()[key].SEQUENCES;
+//     console.log(currSequence);
+//     for (var element in currSequence) {
+//       console.log(currSequence[element]);
+//       sum = sum + parseInt(currSequence[element], 10);
+//     }
+//     finalSum = padString(sum.toString(), 12);
+//     const arr = [];
+//     for (var i = 0; i < finalSum.length; i++) {
+//       arr.push(finalSum[i] / currSequence.length);
+//     }
+//     console.log(arr);
+//   }
+// });
+
+console.log(decodeURI(data.name));

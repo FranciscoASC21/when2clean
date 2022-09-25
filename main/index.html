@@ -1,133 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>when2clean</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>when2clean</title>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
-            rel="stylesheet"
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <script src="../scripts/scripts.js" defer></script>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <img class="logo" src="../images/logo.png" />
+      <div class="buttons">
+        <button></button>
+        <button></button>
+        <button class="borough-button">Brooklyn</button>
+        <button class="borough-button">Bronx</button>
+        <button class="borough-button">Manhattan</button>
+        <button class="borough-button">Queens</button>
+        <button class="borough-button">Staten Island</button>
+      </div>
+    </div>
+
+    <div class="map-content">
+      <div class="map">
+        <img class="nyc-map" src="../images/whole_map.png" />
+        <img
+          class="borough-button marker brooklyn-marker"
+          src="../images/marker.png"
         />
-        <link rel="stylesheet" href="../styles/style.css" />
-        <script src="../scripts/scripts.js" defer></script>
-    </head>
+        <img
+          class="borough-button marker bronx-marker"
+          src="../images/marker.png"
+        />
+        <img
+          class="borough-button marker man-marker"
+          src="../images/marker.png"
+        />
+        <img
+          class="borough-button marker queens-marker"
+          src="../images/marker.png"
+        />
+        <img
+          class="borough-button marker si-marker"
+          src="../images/marker.png"
+        />
 
-    <body>
-        <div class="navbar">
-            <img class="logo" src="../images/logo.png" />
-            <div class="buttons">
-                <button></button>
-                <button></button>
-                <button class="borough-button">Brooklyn</button>
-                <button class="borough-button">Bronx</button>
-                <button class="borough-button">Manhattan</button>
-                <button class="borough-button">Queens</button>
-                <button class="borough-button">Staten Island</button>
-            </div>
+        <p>Click on a marker to view parks in that borough</p>
+      </div>
+
+      <div class="site-info">
+        <div class="site-description">
+          <p>
+            <strong>When2clean</strong> is a website dedicated to helping the
+            environment by bringing people together to clean up parks. Our
+            mission is to reduce waste, and increase the sustainability in NYC
+            one park at a time. We welcome all to find a park near you and plan
+            with others to help our city!
+          </p>
+          <br />
+          <h4 style="text-align: center">
+            See the work people like you have done!
+          </h4>
         </div>
 
-        <div class="map-content">
-            <div class="map">
-                <img class="nyc-map" src="../images/whole_map.png" />
-                <img
-                    class="borough-button marker brooklyn-marker"
-                    src="../images/marker.png"
-                />
-                <img
-                    class="borough-button marker bronx-marker"
-                    src="../images/marker.png"
-                />
-                <img
-                    class="borough-button marker man-marker"
-                    src="../images/marker.png"
-                />
-                <img
-                    class="borough-button marker queens-marker"
-                    src="../images/marker.png"
-                />
-                <img
-                    class="borough-button marker si-marker"
-                    src="../images/marker.png"
-                />
+        <div>
+          <img class="mySlides" src="../images/park.jpg" />
+          <img class="mySlides" src="../images/park2.jpg" />
+          <img class="mySlides" src="../images/park3.jpg" />
+          <img class="mySlides" src="../images/park4.jpg" />
 
-                <p>Click on a marker to view parks in that borough</p>
-            </div>
-
-            <div class="site-info">
-                <div class="site-description">
-                    <p>
-                        <strong>When2clean</strong> is a website dedicated to
-                        helping the environment by bringing people together to
-                        clean up parks. Our mission is to reduce waste, and
-                        increase the sustainability in NYC one park at a time.
-                        We welcome all to find a park near you and plan with
-                        others to help our city!
-                    </p>
-                    <br />
-                    <h4 style="text-align: center">
-                        See the work people like you have done!
-                    </h4>
-                </div>
-
-                <div>
-                    <img class="mySlides" src="../images/park.jpg" />
-                    <img class="mySlides" src="../images/park2.jpg" />
-                    <img class="mySlides" src="../images/park3.jpg" />
-                    <img class="mySlides" src="../images/park4.jpg" />
-
-                    <div class="arrow-buttons">
-                        <button class="one arrow-btn" onclick="plusDivs(-1)">
-                            &#10094;
-                        </button>
-                        <button class="two arrow-btn" onclick="plusDivs(1)">
-                            &#10095;
-                        </button>
-                    </div>
-                </div>
-
-                <script>
-                    var slideIndex = 1;
-                    showDivs(slideIndex);
-
-                    function plusDivs(n) {
-                        showDivs((slideIndex += n));
-                    }
-
-                    function showDivs(n) {
-                        var i;
-                        var x = document.getElementsByClassName("mySlides");
-                        if (n > x.length) {
-                            slideIndex = 1;
-                        }
-                        if (n < 1) {
-                            slideIndex = x.length;
-                        }
-                        for (i = 0; i < x.length; i++) {
-                            x[i].style.display = "none";
-                        }
-                        x[slideIndex - 1].style.display = "block";
-                    }
-                </script>
-            </div>
+          <div class="arrow-buttons">
+            <button class="one arrow-btn" onclick="plusDivs(-1)">
+              &#10094;
+            </button>
+            <button class="two arrow-btn" onclick="plusDivs(1)">
+              &#10095;
+            </button>
+          </div>
         </div>
 
-        <div class="borough-content" style="display: none">
-            <div class="map">
-                <img class="b-image" src="" />
-            </div>
+        <script>
+          var slideIndex = 1;
+          showDivs(slideIndex);
 
-            <div class="park-list"></div>
-        </div>
-    </body>
-    <script>
-        let selectedPark = "";
-        function selectPark(park) {
-            selectedPark = park;
-            console.log(selectedPark);
-        }
-    </script>
+          function plusDivs(n) {
+            showDivs((slideIndex += n));
+          }
+
+          function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {
+              slideIndex = 1;
+            }
+            if (n < 1) {
+              slideIndex = x.length;
+            }
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+          }
+        </script>
+      </div>
+    </div>
+
+    <div class="borough-content" style="display: none">
+      <div class="map">
+        <img class="b-image" src="" />
+      </div>
+
+      <div class="park-list"></div>
+    </div>
+  </body>
 </html>
