@@ -82,7 +82,7 @@ buttons.forEach((button, index) => {
     event.preventDefault();
     mapContent.style.display = "none";
     boroughContent.style.display = "flex";
-    bImage.src = `../images/${bImages[index % 5]}.png`;
+    bImage.src = `images/${bImages[index % 5]}.png`;
     populateList(index % 5);
     createMarkers(index % 5);
   };
@@ -94,7 +94,7 @@ function createMarkers(index) {
   }
   for (let i = 0; i < parkCoords[index].length; i++) {
     let marker = document.createElement("img");
-    marker.src = "../images/marker.png";
+    marker.src = "images/marker.png";
     marker.className = "marker";
     marker.style.transform = `translate(${parkCoords[index][i][0]}vh, ${parkCoords[index][i][1]}vh)`;
     marker.style.width = "8.5vh";
@@ -119,7 +119,7 @@ function createMarkers(index) {
     };
 
     marker.onclick = () => {
-      window.location.href = `../main/grass.html?name=${parks[index][i]}`;
+      window.location.href = `grass.html?name=${parks[index][i]}`;
     };
   }
 }
@@ -136,10 +136,10 @@ function populateList(index) {
     let listItem = document.createElement("p");
 
     let parkImg = document.createElement("img");
-    parkImg.src = "../images/park_holder.webp";
+    parkImg.src = "images/park_holder.webp";
     listItem.innerHTML = parks[index][i];
     parkContainer.onclick = () => {
-      window.location.href = `../main/grass.html?name=${parks[index][i]}`;
+      window.location.href = `grass.html?name=${parks[index][i]}`;
     };
     parkContainer.appendChild(parkImg);
     parkContainer.appendChild(listItem);
