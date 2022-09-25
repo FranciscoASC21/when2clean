@@ -13,7 +13,7 @@ const parkCoords = [[[-40, 27], [-42, 14.5], [-17.5, 41.5], [-51, 32.5], [-47.5,
 logo.onclick = () => {
   mapContent.style.display = "flex";
   boroughContent.style.display = "none";
-}
+};
 
 buttons.forEach((button, index) => {
   button.onclick = (event) => {
@@ -47,6 +47,10 @@ function createMarkers(index) {
       marker.style.filter = "invert(88%) sepia(24%) saturate(1000%) hue-rotate(287deg) brightness(99%) contrast(106%)";
     };
   }
+};
+
+function selectPark(park) {
+  selectedPark = park;
 }
 
 function populateList(index) {
@@ -55,9 +59,13 @@ function populateList(index) {
   for (let i = 0; i < parks[index].length; i++) {
     let parkContainer = document.createElement("div");
     let listItem = document.createElement("p");
+
     let parkImg = document.createElement("img");
     parkImg.src = "../images/park_holder.webp";
     listItem.innerHTML = parks[index][i];
+    parkContainer.onclick = () => {
+      window.location.href = `../main/grass.html?name=${parks[index][i]}`;
+    };
     parkContainer.appendChild(parkImg);
     parkContainer.appendChild(listItem);
     parkList.appendChild(parkContainer);
