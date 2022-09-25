@@ -46,8 +46,8 @@ function updateAval() {
 }
 
 const bars = document.querySelectorAll("li");
-var string = "";
 function submitAvailability() {
+  let string = "";
   bars.forEach((bar) => {
     if (bar.style.backgroundColor == "lightgreen") {
       string += "1";
