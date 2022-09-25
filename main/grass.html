@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>when2clean</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!--Go to https://console.firebase.google.com-->
     <!--Sign in and add a project "fireMessage"-->
@@ -25,6 +24,7 @@
       rel="stylesheet"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
     <script type="module">
@@ -51,6 +51,18 @@
     Date:
     <input type="text" class="date_in" />
     <div class="date_div"></div>
+
+    <button class="submitdate" onclick="submitDate();">console date</button>
+    <button class="submitButton">test database post</button>
+
+    <div id="slider" class="slider-container">
+    <li class="slider-cell"></li>
+    <li class="slider-cell"></li>
+    <li class="slider-cell"></li>
+    <li class="slider-cell"></li>
+    <li class="slider-cell"></li>
+    </div>
+<!-- script -->
     <script>
       $(".date_div").datepicker({
         inline: true,
@@ -67,34 +79,21 @@
       }
 
       var count = 0;
-      $("div")
-        .on("mousedown mouseover", function (e) {
-          console.log("mouse down and over");
-          if (e.buttons == 1 || e.buttons == 3) {
-            if (count % 2 == 0) {
-              $(this).css({
-                "background-color": "red",
-              });
-            } else {
-              $(this).css({
-                "background-color": "white",
-              });
-            }
-          }
-        })
-        .on("mouseup", function (e) {
-          count++;
-        });
+      $("li").on("mousedown mouseover", function (e) {
+        if (e.buttons == 1 || e.buttons == 3) {
+          if(count%2 == 0) {
+            $(this).css({
+              backgroundColor: "lightgreen"
+          });
+        } else {
+          $(this).css({
+              backgroundColor: "white"
+          });     
+        }
+      }
+    }).on("mouseup", function (e) {
+    count++;
+    });
     </script>
-    <button class="submitdate" onclick="submitDate();">console date</button>
-    <button class="submitButton">test database post</button>
-
-    <!-- <div id="slider" class="slider-container"> -->
-    <div class="slider-cell"></div>
-    <div class="slider-cell"></div>
-    <div class="slider-cell"></div>
-    <div class="slider-cell"></div>
-    <div class="slider-cell"></div>
-    <!-- </div> -->
   </body>
 </html>

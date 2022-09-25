@@ -5,5 +5,9 @@
 .slider-cell {
     padding-top: 2rem;
     outline: 2px solid black;
-    background-color: gray;
+    background-color: rgb(255, 255, 255);
+}
+
+li {
+    list-style-type: none;
 }
