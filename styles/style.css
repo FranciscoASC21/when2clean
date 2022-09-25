@@ -21,6 +21,7 @@ strong {
 
 .navbar img {
   width: 15vw;
+  cursor: pointer;
 }
 
 .navbar .buttons {
@@ -32,13 +33,19 @@ strong {
   border-bottom: black 1px solid;
 }
 
-.buttons a {
-  text-decoration: none;
+.buttons button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
   color: black;
   font-size: 20px;
 }
 
-.buttons a:hover {
+.buttons button:hover {
   font-weight: bold;
   box-shadow: 0 -3px 0 #000;
 }
@@ -191,12 +198,59 @@ strong {
   font-weight: bold;
 }
 
-.buttons .one {
+.arrow-buttons .one {
   position: absolute;
   transform: translate(0, -13vw);
 }
 
-.buttons .two {
+.arrow-buttons .two {
   position: absolute;
   transform: translate(32vw, -13vw);
+}
+
+.borough-content {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.map .b-image {
+  height: 70vh;
+}
+
+.park-list {
+  border: black solid 0.5px;
+  width: 40vw;
+  border-radius: 20px;
+  padding: 25px;
+  font-size: 22px;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.park-list div {
+  border: solid whitesmoke 1px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px gray;
+  background-color: rgb(228, 227, 227);
+  display: flex;
+  width: 35vw;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 5px 0;
+}
+
+.park-list div p {
+  width: 30vw;
+}
+
+.park-list div img {
+  width: 4vw;
+  border-radius: 2vw;
+  border: black 0.5px solid;
+  margin: 0 4vw;
 }
