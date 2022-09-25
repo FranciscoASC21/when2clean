@@ -46,3 +46,16 @@ function padString(str, length) {
   }
   return str;
 }
+
+function getOpacities(arr) {
+  var sum = 0;
+  for (var element in arr) {
+    sum = sum + parseInt(arr[element], 10);
+  }
+  finalSum = padString(sum.toString(), 12);
+  const opacities = [];
+  for (var i = 0; i < finalSum.length; i++) {
+    opacities.push(finalSum[i] / arr.length);
+  }
+  return opacities;
+}
