@@ -38,10 +38,6 @@ button.onclick = function updateDB(event) {
   database.push(value);
 };
 
-// function updateAvailability(rowData) {
-// current user input = avail, take other user's avail from db, once avail is finalized allow
-// pull the bit sequences from the db, for each bit we want to divide opacity entered 1s/total entries
-// it can return an array with the set of opacities, probably send back as json
 function padString(str, length) {
   if (str.length < length) {
     for (var i = 0; i <= length - str.length; i++) {
