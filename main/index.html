@@ -16,26 +16,26 @@
 
 <body>
   <div class="navbar">
-    <img src="../images/logo.png" />
+    <img class="logo" src="../images/logo.png" />
     <div class="buttons">
-      <a></a>
-      <a></a>
-      <a href="#">Brooklyn</a>
-      <a href="#">Bronx</a>
-      <a href="#">Manhattan</a>
-      <a href="#">Queens</a>
-      <a href="#">Staten Island</a>
+      <button></button>
+      <button></button>
+      <button class="borough-button">Brooklyn</button>
+      <button class="borough-button">Bronx</button>
+      <button class="borough-button">Manhattan</button>
+      <button class="borough-button">Queens</button>
+      <button class="borough-button">Staten Island</button>
     </div>
   </div>
 
   <div class="map-content">
     <div class="map">
       <img class="nyc-map" src="../images/whole_map.png" />
-      <img class="marker brooklyn-marker" src="../images/marker.png" />
-      <img class="marker bronx-marker" src="../images/marker.png" />
-      <img class="marker man-marker" src="../images/marker.png" />
-      <img class="marker queens-marker" src="../images/marker.png" />
-      <img class="marker si-marker" src="../images/marker.png" />
+      <img class="borough-button marker brooklyn-marker" src="../images/marker.png" />
+      <img class="borough-button marker bronx-marker" src="../images/marker.png" />
+      <img class="borough-button marker man-marker" src="../images/marker.png" />
+      <img class="borough-button marker queens-marker" src="../images/marker.png" />
+      <img class="borough-button marker si-marker" src="../images/marker.png" />
 
       <p>Click on a marker to view parks in that borough</p>
     </div>
@@ -61,7 +61,7 @@
         <img class="mySlides" src="../images/park3.jpg" />
         <img class="mySlides" src="../images/park4.jpg" />
 
-        <div class="buttons">
+        <div class="arrow-buttons">
           <button class="one arrow-btn" onclick="plusDivs(-1)">
             &#10094;
           </button>
@@ -94,6 +94,15 @@
           x[slideIndex - 1].style.display = "block";
         }
       </script>
+    </div>
+  </div>
+
+  <div class="borough-content" style="display: none">
+    <div class="map">
+      <img class="b-image" src="">
+    </div>
+
+    <div class="park-list">
     </div>
   </div>
 </body>
