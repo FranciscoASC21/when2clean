@@ -235,7 +235,7 @@ strong {
   border: solid whitesmoke 1px;
   border-radius: 20px;
   box-shadow: 0px 0px 10px gray;
-  background-color: rgb(228, 227, 227);
+  background-color: #ebebeb;
   display: flex;
   width: 35vw;
   align-items: center;
