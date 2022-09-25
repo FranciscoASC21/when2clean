@@ -8,10 +8,6 @@ body {
   background-size: 100vw;
 }
 
-.slider-container {
-  width: 25%;
-}
-
 .slider-cell {
   padding-top: 2rem;
   outline: 2px solid black;
@@ -19,7 +15,6 @@ body {
 }
 
 .current-av {
-  margin-top: 50px;
   width: 25vw;
   background-color: white;
 }
@@ -77,3 +72,74 @@ li {
   display: inline-block;
   width: 60%;
 }
+
+.calendar-container {
+    font-size: 1.7vw;
+    margin-top: 2vw;
+}
+
+.park-name {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 5px;
+  }
+
+ .body-container {
+    display: flex;
+    justify-content: space-around;
+ }
+
+.user-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.slider-cell {
+    width: 20vw;
+    cursor:crosshair;
+}
+
+.slider-cell li {
+    -webkit-user-drag: none;
+}
+
+::selection {
+    color: none;
+    background: none;
+}
+
+.submitButton {
+    all: initial;
+    color: white;
+    font-size: 20px;
+    padding: 1vw 4vw;
+	border: 1px solid brown;
+    border-radius: 15px;
+    background-color: rgb(255, 188, 101);
+}
+
+.submitButton:hover {
+    font-weight: bold;
+	cursor: pointer;
+    background-color: rgb(255, 161, 38);
+}
+
+
+.master-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.current-av{
+    width: 20vw;
+} 
+
+.slider-container {
+    width: 20vw;
+}
+
+/* .img-hold{
+    
+} */
+

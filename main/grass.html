@@ -1,116 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>when2clean</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>when2clean</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
 
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
+    <link
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-  <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css"
-    rel="stylesheet" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="module">
+      const firebaseConfig = {
+        apiKey: "AIzaSyCcPwQOnlU0mWF4Os9DCotpLKqBrn0lNo4",
+        authDomain: "when2clean-66dda.firebaseapp.com",
+        projectId: "when2clean-66dda",
+        storageBucket: "when2clean-66dda.appspot.com",
+        messagingSenderId: "84511905177",
+        appId: "1:84511905177:web:6b4488482605a6979e2f08",
+        measurementId: "G-LRRBV9KWK8",
+      };
 
-  <script type="module">
-    const firebaseConfig = {
-      apiKey: "AIzaSyCcPwQOnlU0mWF4Os9DCotpLKqBrn0lNo4",
-      authDomain: "when2clean-66dda.firebaseapp.com",
-      projectId: "when2clean-66dda",
-      storageBucket: "when2clean-66dda.appspot.com",
-      messagingSenderId: "84511905177",
-      appId: "1:84511905177:web:6b4488482605a6979e2f08",
-      measurementId: "G-LRRBV9KWK8",
-    };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <link rel="stylesheet" href="../styles/grass.css" />
+    <script src="../scripts/availability.js" defer></script>
+  </head>
 
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-  </script>
-  <link rel="stylesheet" href="../styles/grass.css" />
-  <script src="../scripts/availability.js" defer></script>
-</head>
+  <body>
+    <div class="navbar">
+      <img
+        onclick="window.location.href = 'index.html'"
+        class="logo"
+        src="../images/logo.png"
+      />
+      <div class="buttons">
+        <p class="park-name">hello</p>
+      </div>
+    </div>
 
-<body>
-  <div class="navbar">
-    <img onclick="window.location.href = 'index.html'" class="logo" src="../images/logo.png" />
-    <div class="buttons"></div>
-  </div>
+    <div class="body-container">
+      <div class="calendar-container">
+        Date:
+        <input
+          type="text"
+          class="date_in"
+          style="font-size: 1.7vw; margin-bottom: 7px; border: 1px solid black"
+        />
+        <div class="date_div"></div>
+      </div>
 
-  Date:
-  <input type="text" class="date_in" />
-  <div class="date_div"></div>
+      <div class="user-slider">
+        <h2>Your Availability</h2>
+        <br />
+        <div class="slider-container">
+          <li class="slider-cell">7:00AM</li>
+          <li class="slider-cell">8:00AM</li>
+          <li class="slider-cell">9:00AM</li>
+          <li class="slider-cell">10:00AM</li>
+          <li class="slider-cell">11:00AM</li>
+          <li class="slider-cell">12:00PM</li>
+          <li class="slider-cell">1:00PM</li>
+          <li class="slider-cell">2:00PM</li>
+          <li class="slider-cell">3:00PM</li>
+          <li class="slider-cell">4:00PM</li>
+          <li class="slider-cell">5:00PM</li>
+          <li class="slider-cell">6:00PM</li>
+        </div>
+        <br />
+        <button class="submitButton">Submit</button>
+      </div>
 
-  <div id="slider" class="slider-container">
-    <li class="slider-cell"></li>
-    <li class="slider-cell"></li>
-    <li class="slider-cell"></li>
-    <li class="slider-cell"></li>
-    <li class="slider-cell"></li>
+      <div class="master-slider">
+        <h2>Everyone's Availability</h2>
+        <br />
+        <div class="current-av">
+          <li class="curr-cells">7:00AM</li>
+          <li class="curr-cells">8:00AM</li>
+          <li class="curr-cells">9:00AM</li>
+          <li class="curr-cells">10:00AM</li>
+          <li class="curr-cells">11:00AM</li>
+          <li class="curr-cells">12:00PM</li>
+          <li class="curr-cells">1:00PM</li>
+          <li class="curr-cells">2:00PM</li>
+          <li class="curr-cells">3:00PM</li>
+          <li class="curr-cells">4:00PM</li>
+          <li class="curr-cells">5:00PM</li>
+          <li class="curr-cells">6:00PM</li>
+        </div>
+      </div>
+    </div>
 
-    <li class="slider-cell"></li>
-    <li class="slider-cell"></li>
-    <li class="slider-cell"></li>
-    <li class="slider-cell"></li>
-    <li class="slider-cell"></li>
-
-    <li class="slider-cell"></li>
-    <li class="slider-cell"></li>
-  </div>
-
-  <div class="current-av">
-    <li class="curr-cells"></li>
-    <li class="curr-cells"></li>
-    <li class="curr-cells"></li>
-    <li class="curr-cells"></li>
-    <li class="curr-cells"></li>
-    <li class="curr-cells"></li>
-    <li class="curr-cells"></li>
-    <li class="curr-cells"></li>
-    <li class="curr-cells"></li>
-    <li class="curr-cells"></li>
-    <li class="curr-cells"></li>
-    <li class="curr-cells"></li>
-  </div>
-
-  <button class="submitButton">Submit</button>
-  <!-- script -->
-  <script>
-    // slider code
-    $(".date_div").datepicker({
-      inline: true,
-      altField: ".date_in",
-    });
-
-    $(".date_in").change(function () {
-      $(".date_div").datepicker("setDate", $(this).val());
-    });
-    var count = 0;
-    $("li")
-      .on("mousedown mouseover", function (e) {
-        if (e.buttons == 1 || e.buttons == 3) {
-          if (count % 2 == 0) {
-            $(this).css({
-              backgroundColor: "lightgreen",
-            });
-          } else {
-            $(this).css({
-              backgroundColor: "white",
-            });
-          }
-        }
-      })
-      .on("mouseup", function (e) {
-        count++;
+    <script>
+      // slider code
+      $(".date_div").datepicker({
+        inline: true,
+        altField: ".date_in",
       });
-  </script>
-</body>
 
+      $(".date_in").change(function () {
+        $(".date_div").datepicker("setDate", $(this).val());
+      });
+      var count = 0;
+      $(".slider-cell")
+        .on("mousedown mouseover", function (e) {
+          if (e.buttons == 1 || e.buttons == 3) {
+            if (count % 2 == 0) {
+              $(this).css({
+                backgroundColor: "lightgreen",
+              });
+            } else {
+              $(this).css({
+                backgroundColor: "white",
+              });
+            }
+          }
+        })
+        .on("mouseup", function (e) {
+          count++;
+        });
+    </script>
+  </body>
 </html>

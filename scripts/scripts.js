@@ -7,8 +7,70 @@ const bMap = document.querySelector(".b-map");
 const parkList = document.querySelector(".park-list");
 
 const bImages = ["brooklyn", "bronx", "manhattan", "queens", "staten_island"];
-const parks = [["Prospect Park", "Fort Greene Park", "Canarsie Park", "Sunset Park", "Kaiser Park"], ["Bronx Park", "Crotona Park", "Van Cortlandt Park", "Soundview Park", "Claremont Park"], ["Central Park", "Marcus Garvey Park", "Morningside Park"], ["Kissena Park", "Forest Park", "Astoria Park", "Alley Pond Park", "Hook Creek Park"], ["Brookfield Park", "Bloomingdale Park", "Great Kills Park", "Clove Lakes Park"]];
-const parkCoords = [[[-40, 27], [-42, 14.5], [-17.5, 41.5], [-51, 32.5], [-47.5, 61]], [[-40, 32], [-49, 40], [-44, 10], [-39, 52], [-53.5, 38]], [[-23, 35], [-16, 23.7], [-20.5, 23.7]], [[-35, 17], [-46, 33], [-68, 3.5], [-18, 18], [-18, 54]], [[-43, 32], [-60, 48], [-30, 40], [-25, 9]]]
+const parks = [
+  [
+    "Prospect Park",
+    "Fort Greene Park",
+    "Canarsie Park",
+    "Sunset Park",
+    "Kaiser Park",
+  ],
+  [
+    "Bronx Park",
+    "Crotona Park",
+    "Van Cortlandt Park",
+    "Soundview Park",
+    "Claremont Park",
+  ],
+  ["Central Park", "Marcus Garvey Park", "Morningside Park"],
+  [
+    "Kissena Park",
+    "Forest Park",
+    "Astoria Park",
+    "Alley Pond Park",
+    "Hook Creek Park",
+  ],
+  [
+    "Brookfield Park",
+    "Bloomingdale Park",
+    "Great Kills Park",
+    "Clove Lakes Park",
+  ],
+];
+const parkCoords = [
+  [
+    [-40, 27],
+    [-42, 14.5],
+    [-17.5, 41.5],
+    [-51, 32.5],
+    [-47.5, 61],
+  ],
+  [
+    [-40, 32],
+    [-49, 40],
+    [-44, 10],
+    [-39, 52],
+    [-53.5, 38],
+  ],
+  [
+    [-23, 35],
+    [-16, 23.7],
+    [-20.5, 23.7],
+  ],
+  [
+    [-35, 17],
+    [-46, 33],
+    [-68, 3.5],
+    [-18, 18],
+    [-18, 54],
+  ],
+  [
+    [-43, 32],
+    [-60, 48],
+    [-30, 40],
+    [-25, 9],
+  ],
+];
 
 logo.onclick = () => {
   mapContent.style.display = "flex";
@@ -23,7 +85,7 @@ buttons.forEach((button, index) => {
     bImage.src = `../images/${bImages[index % 5]}.png`;
     populateList(index % 5);
     createMarkers(index % 5);
-  }
+  };
 });
 
 function createMarkers(index) {
@@ -36,18 +98,21 @@ function createMarkers(index) {
     marker.className = "marker";
     marker.style.transform = `translate(${parkCoords[index][i][0]}vh, ${parkCoords[index][i][1]}vh)`;
     marker.style.width = "8.5vh";
-    marker.style.filter = "invert(88%) sepia(24%) saturate(1000%) hue-rotate(287deg) brightness(99%) contrast(106%)";
+    marker.style.filter =
+      "invert(88%) sepia(24%) saturate(1000%) hue-rotate(287deg) brightness(99%) contrast(106%)";
     bMap.appendChild(marker);
 
     marker.onmouseover = function () {
-      marker.style.filter = "invert(88%) sepia(24%) saturate(1000%) hue-rotate(287deg) brightness(60%) contrast(106%)";
+      marker.style.filter =
+        "invert(88%) sepia(24%) saturate(1000%) hue-rotate(287deg) brightness(60%) contrast(106%)";
     };
 
     marker.onmouseout = function () {
-      marker.style.filter = "invert(88%) sepia(24%) saturate(1000%) hue-rotate(287deg) brightness(99%) contrast(106%)";
+      marker.style.filter =
+        "invert(88%) sepia(24%) saturate(1000%) hue-rotate(287deg) brightness(99%) contrast(106%)";
     };
   }
-};
+}
 
 function selectPark(park) {
   selectedPark = park;
@@ -71,16 +136,16 @@ function populateList(index) {
     parkList.appendChild(parkContainer);
 
     parkContainer.onmouseover = function () {
-      parkContainer.style.backgroundColor = "#fcd6d6"
+      parkContainer.style.backgroundColor = "#fcd6d6";
       listItem.style.color = "hotpink";
       listItem.style.fontWeight = "bold";
       parkContainer.style.cursor = "pointer";
     };
 
     parkContainer.onmouseout = function () {
-      parkContainer.style.backgroundColor = "#ebebeb"
+      parkContainer.style.backgroundColor = "#ebebeb";
       listItem.style.color = "black";
-      listItem.style.fontWeight = "none";
+      listItem.style.fontWeight = "normal";
       parkContainer.style.cursor = "none";
     };
   }

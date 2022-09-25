@@ -2,6 +2,7 @@ let database = firebase.database().ref();
 let currentAvailability = document.querySelector(".current-av");
 const button = document.querySelector(".submitButton");
 const dateDiv = document.querySelector(".date_div");
+const parkName = document.querySelector(".park-name");
 let response;
 
 async function getData() {
@@ -10,7 +11,7 @@ async function getData() {
     updateAval();
     dateDiv.onmouseover = function () {
       updateAval();
-    }
+    };
   });
 }
 
@@ -25,19 +26,27 @@ for (var i = 0, l = params.length; i < l; i++) {
   data[tmp[0]] = tmp[1];
 }
 
+parkName.innerHTML = decodeURI(data.name);
+
 function updateAval() {
   let colorValues = [];
   let park = decodeURI(data.name);
   if (park) {
     for (element in response) {
-      if (response[element].PARK == park
-        && document.getElementsByClassName("date_div")[0].value == response[element].DATE) {
+      if (
+        response[element].PARK == park &&
+        document.getElementsByClassName("date_div")[0].value ==
+          response[element].DATE
+      ) {
         colorValues.push(response[element].SEQUENCE.slice(0, 12));
       }
     }
   }
 
-  let ops = colorValues.length == 0 ? [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] : getOpacities(colorValues);
+  let ops =
+    colorValues.length == 0
+      ? [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      : getOpacities(colorValues);
   let avalChildren = currentAvailability.children;
 
   for (let i = 0; i < avalChildren.length; i++) {
@@ -45,9 +54,9 @@ function updateAval() {
   }
 }
 
-const bars = document.querySelectorAll("li");
-var string = "";
+const bars = document.querySelectorAll(".slider-cell");
 function submitAvailability() {
+  var string = "";
   bars.forEach((bar) => {
     if (bar.style.backgroundColor == "lightgreen") {
       string += "1";
@@ -73,10 +82,8 @@ button.onclick = function updateDB(event) {
 };
 
 function padString(str, length) {
-  if (str.length < length) {
-    for (var i = 0; i <= length - str.length; i++) {
-      str = "0" + str;
-    }
+  while (str.length != length) {
+    str = "0" + str;
   }
   return str;
 }
