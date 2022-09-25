@@ -46,21 +46,3 @@ function padString(str, length) {
   }
   return str;
 }
-
-// database.once("value", function (snapshot) {
-//   var sum = 0;
-//   for (var key in snapshot.val()) {
-//     var currSequence = snapshot.val()[key].SEQUENCES;
-//     console.log(currSequence);
-//     for (var element in currSequence) {
-//       console.log(currSequence[element]);
-//       sum = sum + parseInt(currSequence[element], 10);
-//     }
-//     finalSum = padString(sum.toString(), 12);
-//     const arr = [];
-//     for (var i = 0; i < finalSum.length; i++) {
-//       arr.push(finalSum[i] / currSequence.length);
-//     }
-//     console.log(arr);
-//   }
-// });

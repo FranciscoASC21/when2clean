@@ -6,17 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>when2clean</title>
 
-    <!--Go to https://console.firebase.google.com-->
-    <!--Sign in and add a project "fireMessage"-->
-    <!--PASTE SNIPPET HERE-->
-
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
 
     <link
@@ -47,12 +40,18 @@
   </head>
 
   <body>
+    <div class="navbar">
+      <img
+        onclick="window.location.href = 'index.html'"
+        class="logo"
+        src="../images/logo.png"
+      />
+      <div class="buttons"></div>
+    </div>
+
     Date:
     <input type="text" class="date_in" />
     <div class="date_div"></div>
-
-    <button class="submitdate" onclick="submitDate();">console date</button>
-    <!-- <button class="submitButton">test database post</button> -->
 
     <div id="slider" class="slider-container">
       <li class="slider-cell"></li>
@@ -100,7 +99,6 @@
         .on("mouseup", function (e) {
           count++;
         });
-      // submit button
     </script>
   </body>
 </html>
