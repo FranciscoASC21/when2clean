@@ -53,7 +53,7 @@
     <div class="date_div"></div>
 
     <button class="submitdate" onclick="submitDate();">console date</button>
-    <button class="submitButton">test database post</button>
+    <!-- <button class="submitButton">test database post</button> -->
 
     <div id="slider" class="slider-container">
       <li class="slider-cell"></li>
@@ -71,7 +71,7 @@
       <li class="slider-cell"></li>
       <li class="slider-cell"></li>
     </div>
-    <button onclick="submitAvailability()">Submit</button>
+    <button class="submitButton">Submit</button>
     <!-- script -->
     <script>
       // slider code
@@ -83,12 +83,6 @@
       $(".date_in").change(function () {
         $(".date_div").datepicker("setDate", $(this).val());
       });
-
-      function submitDate() {
-        currentDate = document.getElementsByClassName("date_div")[0].value;
-        console.log(currentDate);
-      }
-
       var count = 0;
       $("li")
         .on("mousedown mouseover", function (e) {
@@ -108,18 +102,6 @@
           count++;
         });
       // submit button
-      const bars = document.querySelectorAll("li");
-      var string = "";
-      function submitAvailability() {
-        bars.forEach((bar) => {
-          if (bar.style.backgroundColor == "lightgreen") {
-            string += "1";
-          } else {
-            string += "0";
-          }
-        });
-        console.log(string);
-      }
     </script>
   </body>
 </html>

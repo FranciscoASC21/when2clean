@@ -66,7 +66,6 @@ buttons.forEach((button, index) => {
 
 function selectPark(park) {
   selectedPark = park;
-  console.log(selectedPark);
 }
 
 function populateList(index) {
